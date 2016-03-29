@@ -56,7 +56,31 @@ b) X(s) = [s-1+12]/[(s+5).(s+7)]
 2) SABEND OQUE A RESPOSTA AO DEGRAU UNITARIO DA FUNCAO H(s) abaixo(1), determine a resposta ao impulso no tempo da funcao [Y(s)/R(s)]
 
   (1)   y(t) = eˆ(-5.t) , t >= 0
-                    ______
-    R(s) => (+) -> | H(s) | -> Y(s)
-                 |  ------  |
-                 |<--------<|
+                     _________
+    R(s) => (+) ---> |  H(s) | -> Y(s)
+                 |(-) -------- |
+                 |<-----------<|
+
+SOLUCAO:
+E(s): entrada de H(s)
+E(s) = 1/s -> Y(s) = 1/(s+5)
+
+H(s) = Y(s)/E(s) = (1/(s+5))/(1/s) = | (s/(s+5)) |
+
+[Y(s)/R(s)] = (s/(s+5))/[1+(s/(s+5))] = | s/(2.s+5) |
+
+H(s) = L {resposta ao IMPULSO}
+Lˆ(-1){H(s)} = resposta ao IMPULSO
+
+Y(s) = (1/2).(s/s+2,5) = A0 + A1/(s+2,5)
+
+  A0 = lim Y(s) = (1/2)
+        s->oo
+
+  A1 = Y(s).(s+2,5)| = (1/2).s = (-5/4)
+                s=(-2,5)
+
+    Y(s) = 1/s - (5/4).(1/[s+2,5])
+      Y(t) = (1/2).d(t) - (5/4).eˆ(-2,5.t) , t>= 0ˆ(-)
+
+      
