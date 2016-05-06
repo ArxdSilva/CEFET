@@ -1,11 +1,12 @@
 Logica
 
-  Algoritmo
+  def Algoritmo
 
   Numeracao
     decimal
     binario
     octal
+    hexa*
 
   Operadores
     Logicos
@@ -16,16 +17,16 @@ Logica
   Tipos Primitivos
     inteiro
     real/Ponto flutuante
-    caractere
+    'string'
     booleano (True, False)
 
   Variaveis / Constantes
-    Valor mutavel/imutavel
+    Valor mutavel / imutavel
+    Locais / globais
 
   Estrututas
-
     Estruturadas
-      metodos/procedures
+      metodos / procedures
 
     Selecao
       (tabelas verdades)
@@ -40,9 +41,29 @@ Logica
       Variavel de controle
         for
 
+
+________________________________________________
     Dados
       Arrays
       Dictionaries
       strings
       numbers (checar Tipos Primitivos)
       booleano
+
+    Manipulacao
+      Inputs/Outputs
+        rawinput (js)
+      Matrizes
+        Lista de listas
+
+      In-process-out
+        Function
+          explicit
+        Procedures
+          inplicit
+
+        Outputs/Inputs
+          Parametro
+            Dados esperados pela funcao
+          Argumento
+            Inputs da funcao necessarios para execucao.
