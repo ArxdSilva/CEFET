@@ -1,5 +1,9 @@
 CONSTRUA uma pagina que mostra a temperatura media de cada dia do mes de marco,
-a partir das temperaturas minimas e maximas ocorridas em cada dia. No final, seu programa deve mostrar a media das temperaturas minimas e a media de maximas e o percentual de dias atipicos (isto eh, com temperatura media menor 15C ou superior a 38C). Faca uma funcao que receba a temperatura media de um dia e retorne 1 se for atipico ou 0 caso contrario.
+a partir das temperaturas minimas e maximas ocorridas em cada dia.
+No final, seu programa deve mostrar a media das temperaturas minimas e
+a media de maximas e o percentual de dias atipicos (isto eh, com temperatura
+media menor 15C ou superior a 38C). Faca uma funcao que receba a temperatura
+media de um dia e retorne 1 se for atipico ou 0 caso contrario.
 
 atipico/tipico
 
