@@ -1,0 +1,4 @@
+Domain-Driven Design:
+  Para grande maioria dos projetos o foco deve ser o domínio da aplicação e
+  nas lógicas envolvidas nele. Quando o domínio for complexo a base
+  do projeto deve ser um modelo baseado no domínio.
