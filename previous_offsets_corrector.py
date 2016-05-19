@@ -1,3 +1,4 @@
+
 all = [{'length': 8, 'tag': '<strong>', 'offset': 7}, {'length': 9, 'tag': '</strong>', 'offset': 25}, {'length': 4, 'tag': '<em>', 'offset': 7}]
 
 def modify(all):
