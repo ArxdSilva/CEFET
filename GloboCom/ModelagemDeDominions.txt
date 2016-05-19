@@ -1,0 +1,22 @@
+Identificar:
+  Conceitos de negocio onde ha requisitos de armazenamento;
+  Interrelacoes com demais conceitos do dominio.
+
+  Elementos:
+    Conceito
+      Algo que tenha significado ao negocio
+    Relacionamento
+
+    Expressoes: 
+  Substantivos
+    Sao objetos de interesse, como:
+      -Docs
+      -Pessoas
+      -Estruturas Organizacionais
+  Nome Deverbal:
+    -Eventos
+    -Manifestacoes
+
+Filtrar aquelas que nao tem relacao ao modelo de negocio.
+
+Estrutura, comportamento, Interrelacoes.

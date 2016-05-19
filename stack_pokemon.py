@@ -58,9 +58,10 @@ answer = ''
 
 while(player[1] > 0 and enemy[1] > 0):
     if pokedex[player[0]][1] < enemy[1]:
-        choice = input("What would you like to do?")
+        choice = raw_input("What would you like to do?")
         if choice in ["Attack", "attack", "Kill", "kill"]:
-            print("The player has attacked the enemy's %s." % (enemy[0].items()[0][0]))
+            import ipdb; ipdb.set_trace()
+            print("The player has attacked the enemy's %s." %(enemy[0])
             enemy[1] -= pokedex[player[0]][1]
             print("The enemy's %s has %d HP remaining!" % (enemy[0], enemy[1]))
         elif choice in ["potion", "Potion"]:

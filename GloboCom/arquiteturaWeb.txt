@@ -1,0 +1,7 @@
+Arquitetura
+1 camada:
+  Interface armazenamento
+2 camadas:
+  Interface apresentacao-armazenamento
+3 camadas:
+  Interface apresentacao-aplicacao(regras de negocio)-armazenamento
