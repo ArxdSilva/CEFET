@@ -19,7 +19,8 @@ OOP - Oriented object programming
   objeto: Instancia de uma classe de tipo abstrato
 __
   Polimorfismo
-    Refers to the ability of an object to adapt the code to the type of the data it is processing.
+    Habilidade de um objeto de reutilizar codigo, funcoes sao definidas em uma 'biblioteca', podendo ser chamadas sem a necessidade de reescrever o codigo.
+
        1- An object may provide different implementations of one of its methods depending on the type of the input parameters.
        (exemplo no arquivo)
 

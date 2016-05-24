@@ -14,11 +14,12 @@ class Person(object):
         print self.hair
         print self.gender
 
+
 class Jenny(Person):
 
-    def __init__(self, earings):
-        super(Person, self).__init__(age, name, eye_color, hair, gender)
+    def __init__(self, age, name, eye_color, hair, gender, earings):
         self.earings = earings
+        super(Person, self).__init__(age, name, eye_color, hair, gender)
 
 
 class John(Person):
@@ -32,7 +33,10 @@ genero = ['male', 'female']
 # son = John()
 # daughter = Jenny()
 
-instanciando_Jenny = Jenny(age=22, earings=True, name='Jenny', eye_color='blue', hair='green', gender=genero[1])
-instanciando_Jenny.printing()
+
+instanciando_Jenny = Jenny(age=22,
+                           name='Jenny', eye_color='blue',
+                           hair='green', gender=genero[1], earings=True)
+
 
 # super usado para principalmente evitar problemas com heranca multipla
