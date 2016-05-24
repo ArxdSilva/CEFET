@@ -1,0 +1,96 @@
+dia 24/05/2016
+
+Equacoes de diferencas
+
+  Forma geral:
+      y(n+m0) + a1.y(n+m0-1) + a2.y(n+m0-2) + ... + a_m0.y(n) = (continua)
+(continuacao) = x(n+p0) + b1.x(n+p0-1) + ... + b_p0.x(n)
+    Onde x(n) eh a entrada do sinal e y(n) eh a saida do sinal.
+
+    Resposta total:
+      y(n) = y_REZ(n) + y_REN(n) = EQUACAO GERAL DA SOLUCAO
+
+    Ferramenta matematica:
+      - Transformaca Zi
+      - Propreiadades
+
+      | Eq. de Dif. | ===> | Eq. Geral |
+        (Recursiva)          (Solucao)
+
+    Atraso:
+      Z{x(n-m0)} = [Zˆ(-m0)].x(z) + [Zˆ(-m0)].S(x(-k)).Zˆ(k)
+      S = somatorio de k = 1, ate m0
+
+    Avanco:
+      Z{x(n+m0)} = [Zˆ(m0)].x(z) + [Zˆ(m0)].S(x(k)).Zˆ(-k)
+
+____________________________________________________________
+      Caso 01:
+        m0 > 0
+
+    EXEMPLO:
+        | y(n) - 0,8.y(n-1) = 0
+        | y(-1) = 10
+      Calcular y(n) [expressao da forma geral].
+
+  SOLUCAO:
+
+    Nao existe excitacao, entao y(n) = y_REN(n)
+      Z{y(n) - 0,8.y(n-1)} = 0
+      Z{y(n)} = y(z)
+      Z{y(n-1)} = zˆ(-1).y(z) + zˆ(-1).y(-1).zˆ(1)
+      Z{y(n-1)} = zˆ(-1).y(z) + y(-1)
+
+    Substituindo:
+      y(z) - 0,8.[zˆ(-1).y(z) + y(-1)] = 0
+      y(z) - (0,8/z).y(n) - 8 = 0
+      y(z).[1 - 0,8/z] = 8
+      y(z).[(z - 0,8)/z] = 8
+      y(z) = (8z)/(z - 0,8)
+      y(z) = 8.(0,8)ˆ(n)
+
+____________________________________________________________
+
+EXEMPLO 2:
+    | y(n) - 2.y(n-1) = 0,8ˆ(n)
+    | y(n) = ?
+  Calcular y(n) [expressao da forma geral].
+
+SOLUCAO:
+  1) y(n) = y_REZ(n)
+
+  Z{y(n) - 2.y(n-1)} = Z{0,8ˆ(n)}
+  Z{y(n)} = y(z)
+  Z{y(n-1)} = zˆ(-1).y(z)
+  Z{0,8ˆ(n)} = z/(z-0,8)
+
+  y(z) - 2.zˆ(-1).y(z) = z/(z-0,8)
+  y(z).[1-2/z] = z/(z-0,8)
+  y(z).[(z-2)/z] = z/(z-0,8)
+    ** para achar a inversa, dividir por z ambos os lados.
+  [y(z)]/z = ([z/(z-2)].[z/(z-0,8)])/(z)
+  [y(z)]/z = [z/{(z-0,8).(z-2)}]
+
+Aplicando a formula :
+  [y(z)]/z =  = A0 + A1/(z-0,8) + A2/(z-2)
+
+  A0 = lim([y(z)]/z) = 0
+      z->oo
+
+  A1 = ([y(z)]/z).(z-0,8)|    = (z/(z-2))|    = (-2/3)
+                         |z=0,8          |z=0,8
+
+  A2 = ([y(z)]/z).(z-2)|  = (z/(z-0,8))|    = (5/3)
+                       |z=2            |z=0,8
+
+Assim:
+    Y(z) = (-2/3).(z/(z-0,8)) + (5/3).(z/(z-2))
+    Y(z) = (-2/3).(0,8)ˆ(n) + (5/3).(2)ˆ(n), n >= 0
+
+  DICAS DO TRABALHO:
+(foto)
+- Analisar somente o que sai eh mt 'pobre', entao usar o arquivo enviado para analisar o espectro de grequencia do sinal, as saidas senoidais sairao retas, como na foto.
+- 3 filtros ja dao a atenuacao necessaria.
+- Testar mais filtrada com a original sem ruido.
+
+- Trabalhar com a com ruido e tentar fazer ficar o mais proximo possivel sem ruido.
