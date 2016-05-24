@@ -1,0 +1,37 @@
+Atividade:
+
+    x = l1.cos(t1) + l2.cos(t2)
+    y = l1.sen(t1) + l2.sen(t1 + t2)
+
+    | x` | = | 1 2 | . | t`1 |
+    | y` | = | 3 4 | . | t`2 |
+
+    1 = -(l1.sen(t1) + l2.sen(t1 + t2))
+    2 = -(l2.sen(t1 + t2))
+    3 = (l1.cos(t1) + l1.cos(t1 + t2))
+    4 = l1.cos(t1 + t2)
+
+    Matriz [1, 2, 3, 4] = J(t1, t2), onde t1 e t2 sao angulos.
+
+    x` (x com ponto encima)
+    x` = J.u
+    u = | t1` |
+        | t2` |
+
+    1) Projetar a lei de controle u, para fazer a ferramenta percorrer a referencia:
+        x_ref= 0,1t
+        y_ref= 1,5
+
+        1) Definir variavel de erro (e = x - x_ref)
+        2) definir (e` = x` - x`_ref)
+        2.1) Derivar a eq. do x ate a ordem da eq. necessaria (no caso 1x)
+        3) x_ref = [x_ref]
+                   [y_ref]
+        4) Calcular Matriz inversa u.
+
+    e = x - | 0.1 |
+            |  0  |
+    e` = x` - x`_ref, onde x`_ref = ??
+
+    Derivando x para achar x`:
+      x` = (l1.cos(t1) + l2.cos(t2))'

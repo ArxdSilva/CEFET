@@ -1,52 +1,3 @@
-OOP - Oriented object programming
-
-  1.  Everything is object
-  2.  Program = objects interacting through 'msgs'
-  3.  Object has own memory
-  4.  Object has a type *
-  5.  Same type can get same msgs
-
-
-  object = Encapsulation of data
-    |> identity
-    |> state, characteristics
-    |> behavior
-
-  Encapsulamento: protecao dos atributos ou metodos de uma classe.
-  objeto: Instancia de uma classe de tipo abstrato
-
-  Polimorfismo
-    Refers to the ability of an object to adapt the code to the type of the data it is processing.
-       1- An object may provide different implementations of one of its methods depending on the type of the input parameters.
-       (exemplo no arquivo)
-
-        2- Code written for a given type of data may be used on data with a derived type, that is, methods understand the class hierarchy of a type.
-
-  ADT (abstract data type):
-    - colecao de objetos/valores e metodos correspondentes
-    - Encapsula a representacao de dados e os faz acessiveis a niveis maiores de abstracao.
-
-  Class:
-      Descricao de propriedades comuns de alguns objetos.
-
-  Object:
-      Representacao das propriedades de uma instancia.
-
-  Instanciacao:
-    - mecanismo de criacao de objetos a partir de uma classe.
-    - Sempre engloba a alocacao de dados para o objeto.
-    - Mecanismo onde os objetos recebem estados iniciais.
-
-  Classe: Molde
-  objeto: Agente ativo
-  Metodo: capacidade de acao do agente
-  Atributo: Caracteristica do agente
-----------------------------------------=
-  Classe: Humorista
-  objeto: Fabio Porchat
-  Metodo: contarPiadas
-  Atributo: body_shape(magro), age(36 anos)
-_____________________________________________
 
 __init__ = construtor da classe
             Geralmente faz a iniciacao do codigo
@@ -99,7 +50,7 @@ Heranca:
     class smart(Veiculo, carro):
       comprimento = 2
 
-Membros   Nativos:
+Membros Nativos:
   Todos os membros nativos tem 2 underscores ao redor dos nomes: __init__ , __doc__
   Algums atributos nativos definem informações que devem ser armazenadas para todas as classes.
 
@@ -119,16 +70,3 @@ EXEMPLO:
 
     >>> print Fausto.__doc__
         apresentador
-
-
-EXCECOES:
-  try/except:
-    interrompe o programa, suporta diversas excecoes
-    ex: except(RuntimeError, TypeError, NameError, (...))
-
-  raise:
-    Caso nao queira que um bloco de codigo trate uma excessao, chama-se a parte do codigo em que a excecao é tratado.
-
-  finally:
-    Tenta resolver o erro, antes de parar o codigo.
-    Executado ao final do try
