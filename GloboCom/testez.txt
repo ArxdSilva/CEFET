@@ -5,3 +5,5 @@ Testes:
   testar
 
 ____________________________________
+dif instancia , classe
+kwargs
