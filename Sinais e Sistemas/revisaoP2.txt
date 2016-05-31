@@ -1,0 +1,66 @@
+Sinais e sistemas
+
+Considere o seguinte sistema discreto:
+y(n) - 2.y(n-1) = (0,8)^n ; n>=0
+
+Determine:
+  a)Y(z)
+  b)y(n)
+  c)y(50)
+
+  (questao da prova do ultimo periodo)
+
+________________________________________________
+SOLUCAO:
+
+Entrada: (0,8)^n
+Saida: y(n)
+
+Item (c) precisa calcular recursivamente ou a partir da eq geral y(n) calculado em (b).
+
+Aplicar a transformada Z dos dois lados: [com auxilio da tabela]
+Z{y(n) - 2.y(n-1)} = Z{(0,8)^n}
+
+Z{y(n)} = y(z)
+Z{y(n-1)} = z^(-1).y(z)
+Z{(0,8)^n} = z/(z-0,8)
+
+y(z) - 2.z^(-1).y(z) = z/(z-0,8)
+y(z)[1-2/z] = z/(z-0,8)
+y(z)[(z-2)/z] = z/(z-0,8)
+
+>>> | y(z) = z^2/(z-2).(z-0,8) |
+
+_________________________________________________
+(b)
+y(z)/z = z/(z-2).(z-0,8)
+       = A0 + A1/(z-2) + A2/(z-0,8)
+
+  A0 = lim(y(z)/z), z->0
+  A0 = 0
+
+  A1 = (y(z)/z).(z-2)|      = z/(z-0,8)|     = | 5/3 | <<<<
+                     |z=2              |z=2
+
+  A2 = (y(z)/z).(z-0,8)|      = z/(z-2)|     = | -2/3 | <<<<
+                       |z=0,8          |z=0,8
+
+>>> y(n) = (5/3).2^n - (2/3).(0,8)^n ; n>=0 <<<
+
+_________________________________________________
+
+(c) Pode deixar indicado na questao.
+>>> y(50) = (5/3).2^50 - (2/3).(0,8)^50 <<<
+
+=================================================
+=================================================
+
+Transformada Z:
+x(n): finita -> aplica definicao, resultado => polinomio em z (pode deixar indicado)
+x(n): infinita -> aplica definicao, aplica formula infinita da PG = NUM(Z)/DEN(Z)
+
+Regiao de Convergencia (RDC):
+  1) Achar o raio da regiao:
+      Denominador(z) = 0 -> acha os modulos das raizes
+  2) Verificar para cada regiao (raiz), sua convergencia
+      [EM z=0 e z->oo (infinito)]
