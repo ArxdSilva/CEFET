@@ -15,6 +15,7 @@ class Person(object):
             text += prop + ' is ' + getattr(self, prop)
         print text
 
+
 class X(Person):
 
     properties_to_print = ['name', 'age', 'earings']
@@ -37,7 +38,8 @@ class Y(Person):
         self.printing()
 
 genero = ['male', 'female']
-# instancia = situacao particular de uma classe onde seus atributos tomam certas caracteristicas unicas da instancia.
+# instancia = situacao particular de uma classe onde seus atributos tomam
+# certas caracteristicas unicas da instancia.
 instancia_de_X = X(age=22, name='X', eye_color='blue',
                    hair='green', gender=genero[1], earings=True)
 
@@ -50,4 +52,5 @@ instanciando_Y.printer()
 
 inst_person = Person(age=22, name='X', ...)
 # X seria instancia de Person
-# instancia => parte do codigo onde eh definido um tipo de uma classe que tem certas caracteristicas definidas pela classe.
+# instancia => parte do codigo onde eh definido um tipo de uma classe que
+# tem certas caracteristicas definidas pela classe.

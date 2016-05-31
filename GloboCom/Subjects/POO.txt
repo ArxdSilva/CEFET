@@ -16,7 +16,7 @@ OOP - Oriented object programming
     EXEMPLO NA PASTA
 
 
-  objeto: Instancia de uma classe de tipo abstrato
+  objeto: pode ser uma Instancia de uma classe
 __
   Polimorfismo
     Habilidade de um objeto de reutilizar codigo, funcoes sao definidas em uma 'biblioteca', podendo ser chamadas sem a necessidade de reescrever o codigo.
@@ -31,7 +31,7 @@ __
     - Encapsula a representacao de dados e os faz acessiveis a niveis maiores de abstracao.
 
   Class:
-      Descricao de propriedades comuns de alguns objetos.
+      Estrutura que representa o tipo de certos objetos, um modelo onde os objetos serao montados. Descricao de propriedades comuns de alguns objetos.
 
   Object:
       Representacao das propriedades de uma instancia.

@@ -1,0 +1,141 @@
+---EXERCICIOS DA LISTA---
+
+1) considere o seguinte sistema dinamico:
+
+x''' + 2x'' + 2x' + 3x = u
+y = x
+x''(0) = x'(0) = x(0) = 0
+
+
+a) Obtenha uma representacao de Estados A,B,C,D.
+
+b)Verifique a estabilidade da origem para u=0.
+
+c)Verifique se uma realimentacao de estados do tipo:
+    u = (-k1.x1) - k2.x2 -k3.x3
+      Seria suficiente para alocas as raizes da malha fechada em: (-1), (-2), (-3)
+d) Desenhe o diagrama em blocos da planta e do controlador.[FOTO]
+
+_______________________________________________________________
+SOLUCAO:
+a) Calcular estados:
+x1 = x                                    -> x1' = x2
+x2 = x' -> derivar 1x em relacao ao tempo -> x2' = x3
+x3 = x''                                  -> x3' = u - 2.x'' - 2.x' - 3.x
+                                  (tirar da primeira eq do enunciado)
+                                          -> x3' = u - 2.x3 - 2.x2 - 3.x1
+
+x' = |  0   1    0   |     | 0 |
+     |  0   0    1   |.x + | 0 |.u
+     |(-3) (-2) (-2) |     | 1 |
+     -----------------     _____
+            A                B
+
+y = |1 0 0 |.x + | 0 |.u
+    --------     -----
+        C          D
+
+__________________________________________
+b) x' = A.x
+
+det(S.I - A): polinomio caracteristico = 0 -> raizes
+
+S.I - A = | s  0  0 |   |  0    1    0 |
+          | 0  s  0 | - |  0    0    1 |
+          | 0  0  s |   |(-3) (-2) (-2)|
+
+-> s^2(s+2) + 3 + 0 - 0 + 2.s
+-> 1.s^3 + 2.s^2 + 2.s +  3
+__________________
+ALGORITMO DE ROUTH
+
+s^3 1  2  0
+s^2 2  3  0
+- - - - - - - - -
+s^1 c1 c2
+s^0 d1 d2
+
+Onde:
+
+c1 = (-1/2).|1 2| = 1/2
+            |2 3|
+c2 = (-1/2).|1 0| = 0
+            |2 0|
+d1 = (-1/(1/2)).|2     3| = 3
+                |(1/2) 0|
+d2 = (-1/(1/2)).|2     0| = 0
+                |(1/2) 0|
+
+R: estavel.
+_____________________________________________
+c)
+x' = |  0   1    0   | |x1|   | 0 |
+     |  0   0    1   |.|x2| + | 0 |.([-(k1.x1) - (k2.x2) -(k3.x3)])
+     |(-3) (-2) (-2) | |x3|   | 1 |
+
+x' = |      x2                           |   |              0                |
+     |      x3                           | + |              0                |
+     |[-(k1+3).x1 - (k2+2).x2 -(k3+2).x3]|   | [-(k1.x1) - (k2.x2) -(k3.x3)] |
+
+x' = |      x2                  |
+     |      x3                  |
+     |[-(k1+3) - (k2+2) -(k3+2)]|
+      --------------------------
+                  A_barra
+
+     (s+1)(s+2)(s+3) = s^3 + 6.s^2 + 11.s + 6
+    det(SI-A)
+    S.I - A = | s  0  0 |   |  0         1        0  |
+              | 0  s  0 | - |  0         0        1  |
+              | 0  0  s |   |-(k1+3) - (k2+2) -(k3+2)|
+
+            = |  s        -1        0  |
+              |  0         s       -1  |
+              |(k1+3)  (k2+2)  (s+k3+2)|
+
+Realizando a determinante:
+      s^2(s+k3+2) + k1 + 3  +  0 - 0 - 0 + s(k2 + 2)
+      s^3 + s^2.(k3+2) + (k2 + 2).s + (k1 + 3)
+      k3 + 2 = 6    | k3 = 4 |
+      k2 + 2 = 11 ->| k2 = 9 |
+      k1 + 3 = 6    | k1 = 3 |
+__________________________________________________________________
+LISTA 4:
+    QUESTAO 3
+      Determine k para que o sistema possua raizes com parte real negativa.
+          R(s) = s^3 + (k+4).s^2 + (6.k-7) + 5.k-10
+
+----
+SOLUCAO:
+R(s) = 1.s^3 + (k+4).s^2 + (6.k-7) + 5.k-10
+      --        ----        -----    ------
+      1st        2nd         3rd      4th
+
+s^3    1    (6.k-7)
+s^2  (k+4)  (5k-10)
+- - - - - - - - - - -
+s      c1     c2
+s^0    d1     d2
+('Multiplicar pelo numero na diagonal direita superior e seu respectivo acima')
+
+c1 = -1/(k+4).| 1      (6k-7)  | = -[(5k-10)+(6k-7).(k+4)]/(k+4)
+              | (k+4)  (5k-10) |
+
+c2 = -1/(k+4).|1     0 | = 0
+              |(k+4) 0 |
+
+d1 = (-1/c1).|(k+4) (5k-10)|
+             | c1      0   |
+d1 = 5k-10
+
+d2 = (-1/c1).|(k+4) 0| = 0
+             | c1   0|
+
+(1) k+4 > 0 -> | k > (-4) |
+(2) 5k-10 > 0 -> |k > 2|
+(3) (-5k+10 + (6k-7).(k+4))/(k+4) > 0
+(resolvendo)
+(k-1)(k+3) > 0
+ASSIM:
+    k > 1
+    k > -3
