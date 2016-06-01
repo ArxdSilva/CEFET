@@ -64,3 +64,28 @@ Regiao de Convergencia (RDC):
       Denominador(z) = 0 -> acha os modulos das raizes
   2) Verificar para cada regiao (raiz), sua convergencia
       [EM z=0 e z->oo (infinito)]
+
+=================================================
+EXEMPLO2:        _
+x(n) = {2;0;-2;1;0}
+        | |  | | -> (amostra zero)
+       -4,-3,-2,-1
+Calcular x(z) e RDC?
+
+SOLUCAO:
+x(z) = S[x(k).z^(-k)], -4<k<0
+S = somatorio
+
+y(z) = 2.z^4 + 0.z^3 -2.z^2 + 1.z + 0.z^0
+>>> y(z) = 2.z^4 - 2.z^2 + z <<<
+
+RDC:
+      (regiao onde a transformada Z existe, ou a soma converge)
+      (valores de Z onde a soma vai ao infinito?)
+    2.z^4 - 2.z^2 + z = 0
+    2.z^3 - 2.z + 1 = 0
+    z1 = 0
+    |z2| = |z3| = 0,64
+    |z4| = 1.19
+
+RDC eh qualquer valor do campo complexo, menos o infinito.
